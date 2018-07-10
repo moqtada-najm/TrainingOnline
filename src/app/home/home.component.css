@@ -1,0 +1,40 @@
+
+
+.home{
+background: url(../../assets/img/3.jpg) no-repeat center;
+width: 100%;
+/* height: 656px; */
+-webkit-background-size: cover;
+background-size: cover;
+background-attachment: fixed;
+}
+.myfont{
+    font-family: 'Anton', sans-serif;
+    color: black;
+
+}
+.mycoloris{
+    color:white;
+}
+.inhome{
+    background-color: rgba(0, 0, 0, 0.534);
+    width: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.mypadding{
+    margin:40px 0px 0px 0px;
+}
+
+.forsize{
+    font-size: 40px;
+
+}
+.uk-grid-divider>:not(.uk-first-column)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid #39f;
+}

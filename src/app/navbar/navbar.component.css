@@ -1,0 +1,62 @@
+.bg-dark {
+    background-color: #39f!important;
+}
+.myhr{
+    margin: 10px 1px;
+    padding: 0;
+    color: white;
+    background-color: white;
+}
+.btn-outline-success {
+    color: #000000;
+    background-color: transparent;
+    background-image: none;
+    border-color: #424242;
+    border:1px solid #000000;
+}
+.btn-outline-success:hover {
+    color: #ffffff;
+    background-color: #424242;
+    background-image: none;
+    border-color: #424242;
+}
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
+    color: #fff;
+    background-color: #424242;
+    border-color: #424242;
+}
+.btn-outline-success:not(:disabled):not(.disabled).active:focus, .btn-outline-success:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #424242;
+}
+.fa-atlas  {
+    font-size:30px;
+}
+.myspan{
+    margin: 0px 0px -9px 0px;
+}
+.myfontsize{
+    font-size:16px;
+}
+.mycoloricone{
+    color: rgb(114, 106, 108)
+}
+.myfont{
+    font-family: 'Anton', sans-serif;
+}
+.mycalerbutton {
+    background-color:rgb(114, 106, 108)
+}
+.navbar-brand{
+    font-size:25px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+.navbar-toggler:no-button {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+button:focus {
+    /* outline: 1px dotted; */
+    outline: none;
+}
