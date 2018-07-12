@@ -1,0 +1,54 @@
+<div class="uk-padding">
+    <fieldset class="uk-fieldset">
+       <div class="row">
+            <div class="col-md-6 offset-md-3">
+         <div class="uk-card uk-card-default uk-card-body">
+            <div class="uk-text-center" >
+              <legend class="uk-legend uk-text-bold mycolor">SingUp</legend>
+          </div>
+        <div class="uk-margin">
+            <p class="uk-text-large"> <span uk-icon="icon: user"></span> First name</p>
+            <div class="form-inline ">
+            <input class="uk-input uk-width-5-6@s " id="in-fn" type="text" [(ngModel)]="data.FirstName" name="FirstName" uk-tooltip="title: Enter your first name;  pos: top-right" placeholder="First name">
+            <i class="fas fa-check-circle" id="ic1"></i>
+         </div> 
+        </div>
+        <div class="uk-margin">
+            <div class="form-inline ">
+          <p class="uk-text-large"> <span uk-icon="icon: users"></span> Last name</p>
+          <input class="uk-input uk-width-5-6@s "  id="in-ln" type="text" [(ngModel)]="data.LastName"  name="LastName"   placeholder="Last name" uk-tooltip="title: Enter your lsat name;  pos: top-right" >
+          <i class="fas fa-check-circle" id="ic2"></i>
+        </div>
+        </div>
+        <div class="uk-margin">
+            <div class="form-inline ">
+          <p class="uk-text-large"><span uk-icon="icon: mail"></span> Emile</p>
+          <input class="uk-input uk-width-5-6@s "  id="in-emil" type="text" [(ngModel)]="data.emile"  name="emile"  placeholder="Emile" uk-tooltip="title: Enter your Emile ex- example@example.com;  pos: top-right" >
+          <i class="fas fa-check-circle" id="ic3"></i>
+        </div>
+        <span id="foremile"></span>
+        </div>
+        <div class="uk-margin">
+            <div class="form-inline ">
+          <p class="uk-text-large "><span uk-icon="icon: lock"></span> Password</p>
+          <input class="uk-input uk-width-5-6@s "  id="in-p" type="password"  [(ngModel)]="data.Password"  name="Password"  placeholder="Password" uk-tooltip="title: Enter your Password;  pos: top-right" >
+          <i class="fas fa-check-circle" id="ic4"></i>
+        </div>
+        </div>
+        <div class="uk-margin">
+            <div class="form-inline ">
+          <p class="uk-text-large"><span uk-icon="icon: lock"></span> Confirm Password</p>
+          <input class="uk-input uk-width-5-6@s "  id="in-cp" type="password"  [(ngModel)]="data.ConfirmPassword" name="ConfirmPassword"   placeholder="ConfirmPassword" uk-tooltip="title: Enter your Confirm Password;  pos: top-right" >
+          <i class="fas fa-check-circle" id="ic5"></i>
+        </div>
+        </div>
+  <p uk-margin>
+      <button class="uk-button uk-button-primary" (click)="endsingup()">singup</button>
+  </p>
+  
+      </div>
+    </div>
+  </div>
+        </fieldset>
+  </div>
+  
