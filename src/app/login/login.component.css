@@ -1,0 +1,20 @@
+.uk-alert-danger {
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 17px;
+}
+.forget {
+   margin: 5px 0px 0px 5px
+}
+.fa-user , .fa-lock {
+    margin: 0px 4px 0px 0px
+}
+.formage {
+    margin: 3px 0px 10px 0px
+}
+.loginbutton {
+  margin: 0px 0px 0px -40px
+}
+.buttlogin {
+    border-radius: 6px;
+}

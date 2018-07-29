@@ -1,49 +1,79 @@
 <nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark uk-navbar-container">
- <i class=" navbar-brand myspan">
-   <span class="fas fa-atlas fa-fw mycoloricone" data-fa-transform="shrink-8" ></span>
- </i>  
-  <i class="navbar-brand" >
+  <i class=" navbar-brand myspan">
+    <span class="fas fa-atlas fa-fw mycoloricone" data-fa-transform="shrink-8"></span>
+  </i>
+  <i class="navbar-brand">
     <span class="mycoloricone myfont">Training Online</span>
   </i>
-  <button class="navbar-toggler mycalerbutton" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler mycalerbutton" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon mycalerbutton"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <hr class="myhr">
-      <div class="uk-navbar-right">
-
-    <ul class="navbar-nav mr-auto myfontsize">
-      <li class="nav-item active">
-        <div class="uk-animation-toggle">
+    <hr class="myhr">
+    <div class="uk-navbar-right">
+      <ul class="navbar-nav mr-auto myfontsize">
+        <li class="nav-item active">
+          <div class="uk-animation-toggle">
             <div class="uk-animation-slide-left-small">
-                <a class="nav-link" routerLink="home" ><span class="fas fa-home"></span> Home <span class="sr-only">(current)</span></a>
-              </div>
-        </div>
-      </li>
-      <li class="nav-item active">
-          <div class="uk-animation-toggle">
-              <div class="uk-animation-slide-left-small">
-          <a class="nav-link" routerLink="lessons"><span class="fas fa-book"></span> Lessons <span class="sr-only">(current)</span></a>
-        </div>
-      </div>
-    </li>
-      <li class="nav-item active">
-          <div class="uk-animation-toggle">
-              <div class="uk-animation-slide-left-small">
-                <a class="nav-link"  routerLink="login"><span class="fas fa-sign-in-alt"> </span> Login <span class="sr-only">(current)</span></a>
-          </div>
+              <a class="nav-link" routerLink="home">
+                <span class="fas fa-home"></span> Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
           </div>
         </li>
-      
-      <li class="nav-item active">
+        <li class="nav-item active">
           <div class="uk-animation-toggle">
-              <div class="uk-animation-slide-left-small">
-                <a class="nav-link"  routerLink="/singup"><span class="fas fa-user-plus"> </span> Singup <span class="sr-only">(current)</span></a>
+            <div class="uk-animation-slide-left-small">
+              <a class="nav-link" routerLink="lessons">
+                <span class="fas fa-book"></span> Lessons
+                <span class="sr-only">(current)</span>
+              </a>
             </div>
+          </div>
+        </li>
+        <li class="nav-item active" *ngIf="!isLoggedIn">
+          <div class="uk-animation-toggle">
+            <div class="uk-animation-slide-left-small">
+              <a class="nav-link" routerLink="login">
+                <span class="fas fa-sign-in-alt"> </span> Login
+                <span class="sr-only">(current)</span>
+              </a>
             </div>
-       </li>
-    </ul>
-  </div>
+          </div>
+        </li>
+        <li class="nav-item active" *ngIf="!isLoggedIn">
+          <div class="uk-animation-toggle">
+            <div class="uk-animation-slide-left-small">
+              <a class="nav-link" routerLink="/singup">
+                <span class="fas fa-user-plus"> </span> Singup
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item active" *ngIf="isLoggedIn">
+          <div class="uk-animation-toggle">
+            <div class="uk-animation-slide-left-small">
+              <a class="nav-link" routerLink="/profile">
+                <span class="fas fa-address-book"> </span> Profile
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item active" *ngIf="isLoggedIn">
+          <div class="uk-animation-toggle">
+            <div class="uk-animation-slide-left-small">
+              <a class="nav-link" (click)="logout()">
+                <span class="fas fa-sign-out-alt"> </span> Logout
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

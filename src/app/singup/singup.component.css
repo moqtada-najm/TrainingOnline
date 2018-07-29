@@ -3,9 +3,19 @@
 }
 .fa-check-circle{
     padding: 4px;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #foremile {
     color: red
+}
+#forpass{
+    color: red
+}
+#waiting {
+    padding: 13px 0px 0px 10px;
+    font-size: 18px
+}
+.mymarg {
+    margin: 10px;
 }

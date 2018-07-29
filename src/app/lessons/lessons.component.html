@@ -1,0 +1,240 @@
+<div class="my-padding">
+  <fieldset class="uk-fieldset">
+    <div class="row">
+      <div class="offset-lg-3 offset-md-3 col-12 col-lg-6 col-md-6 col-sm-12">
+        <div class="uk-card uk-card-default uk-card-body">
+          <div *ngIf="techer" class="list-group-item list-group-item-action flex-column align-items-start ">
+            <div class="uk-text-center">
+              <h1 class="">Welcome Teacher</h1>
+              <p class="mb-1 my-margin">You can create your students' lesson by clicking on the button below</p>
+              <button class="uk-button uk-button-primary buttlogin forget my-margin" href="#Creat_lesson" uk-toggle>Create a lesson</button>
+              <div id="Creat_lesson" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog">
+                  <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                  <div class="uk-grid-collapse ">
+                    <div class="uk-padding-large" uk-height-viewport>
+                      <div class="uk-padding">
+                        <fieldset class="uk-fieldset">
+                          <div class="row">
+                            <div class="offset-lg-2 offset-md-2 col-12 col-lf-8 col-md-8 col-sm-12">
+                              <div class="uk-card uk-card-default uk-card-body">
+                                <h1>Create a lesson</h1>
+                                <div class="uk-margin ">
+                                  <p class="uk-text-large">
+                                    <span class="fas fa-chalkboard"></span> Subject</p>
+                                  <div class="form-inline ">
+                                    <input class="uk-input uk-width-5-6@s " type="text" name="Subject" [(ngModel)]="data.subject" placeholder="Subject">
+                                  </div>
+                                </div>
+                                <div class="uk-margin ">
+                                  <p class="uk-text-large ">
+                                    <span class="fas fa-list-ol"></span> Lesson Number</p>
+                                  <div class="form-inline ">
+                                    <input class="uk-input uk-width-5-6@s " type="text" [(ngModel)]="data.lNumber" name="lNumber" placeholder="Lesson Number">
+                                  </div>
+                                </div>
+                                <div class="uk-margin ">
+                                  <p class="uk-text-large ">
+                                    <span class="fas fa-stopwatch"></span> Lesson start time</p>
+                                  <div class="form-inline ">
+                                    <input class="uk-input uk-width-5-6@s " type="text" [(ngModel)]="data.lStartTime" name="lStartTime" placeholder="time / am or pm">
+                                  </div>
+                                </div>
+                                <div class="uk-margin ">
+                                  <p class="uk-text-large ">
+                                    <span class="fas fa-clock"></span> Number of lesson hours</p>
+                                  <div class="form-inline ">
+                                    <input class="uk-input uk-width-5-6@s " type="text" [(ngModel)]="data.NumberLessonsHours" name="NumberLessonsHours" placeholder="hours Number">
+                                  </div>
+                                </div>
+                                <div class="uk-margin ">
+                                  <p class="uk-text-large ">
+                                    <span class="fas fa-link"></span> Lesson link from Zoom</p>
+                                  <div class="form-inline ">
+                                    <input class="uk-input uk-width-5-6@s " type="text" [(ngModel)]="data.zoomLink" name="zoomLink" placeholder="zoom link">
+                                  </div>
+                                </div>
+                                <div class="uk-margin">
+                                  <p class="uk-text-large ">
+                                    <span class="fas fa-sticky-note"></span> Notes</p>
+                                  <div class="form-inline ">
+                                    <textarea class="uk-textarea uk-width-5-6@s" rows="5" [(ngModel)]="data.notes" name="notes" placeholder="Notes"></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-inline " uk-margin>
+                                  <button class="uk-button uk-button-primary uk-text-capitalize" (click)="share()">Share the Lesson</button>
+                                  <div id="waiting" uk-margin></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-group">
+            <div *ngFor="let item of mylist | async  | reverse" class="mypadding">
+              <div class="list-group-item  list-group-item-action  flex-column align-items-start ">
+                <div class="uk-card-header">
+                  <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                      <img class="uk-border-circle" width="50" height="50" src="{{item.payload.val().userphoto}}">
+                    </div>
+                    <div class="uk-width-expand">
+                      <div *ngIf="uidname === item.payload.val().uid" class="uk-modal-close-default">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span uk-icon="more-vertical"></span>
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav  ">
+                              <button href="#edit_lesson" class="dropdown-item " uk-toggle>
+                                <span uk-icon="pencil"></span> Edit </button>
+                              <div id="edit_lesson" class="uk-modal-full" uk-modal>
+                                <div class="uk-modal-dialog">
+                                  <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                                  <div class="uk-grid-collapse ">
+                                    <div class="uk-padding-large" uk-height-viewport>
+                                      <div class="uk-padding">
+                                        <fieldset class="uk-fieldset">
+                                          <div class="row">
+                                            <div class="offset-lg-2 offset-md-2 col-12 col-lf-8 col-md-8 col-sm-12">
+                                              <div class="uk-card uk-card-default uk-card-body">
+                                                <h1>Create a lesson</h1>
+                                                <div class="uk-margin ">
+                                                  <p class="uk-text-large">
+                                                    <span class="fas fa-chalkboard"></span> Subject </p>
+                                                  <div class="form-inline ">
+                                                    <input class="uk-input uk-width-5-6@s " type="text" value={{item.payload.val().subject}} #Subject placeholder="Subject">
+                                                  </div>
+                                                </div>
+                                                <div class="uk-margin ">
+                                                  <p class="uk-text-large ">
+                                                    <span class="fas fa-list-ol"></span> Lesson Number</p>
+                                                  <div class="form-inline ">
+                                                    <input class="uk-input uk-width-5-6@s " type="text" value={{item.payload.val().lNumber}} #lNumber placeholder="Lesson Number">
+                                                  </div>
+                                                </div>
+                                                <div class="uk-margin ">
+                                                  <p class="uk-text-large ">
+                                                    <span class="fas fa-stopwatch"></span> Lesson start time</p>
+                                                  <div class="form-inline ">
+                                                    <input class="uk-input uk-width-5-6@s " type="text" value={{item.payload.val().lStartTime}} #lStartTime placeholder="time / am or pm">
+                                                  </div>
+                                                </div>
+                                                <div class="uk-margin ">
+                                                  <p class="uk-text-large ">
+                                                    <span class="fas fa-clock"></span> Number of lesson hours</p>
+                                                  <div class="form-inline ">
+                                                    <input class="uk-input uk-width-5-6@s " type="text" value={{item.payload.val().NumberLessonsHours}} #NumberLessonsHours placeholder="hours Number">
+                                                  </div>
+                                                </div>
+                                                <div class="uk-margin ">
+                                                  <p class="uk-text-large ">
+                                                    <span class="fas fa-link"></span> Lesson link from Zoom</p>
+                                                  <div class="form-inline ">
+                                                    <input class="uk-input uk-width-5-6@s " type="text" value={{item.payload.val().zoomLink}} #zoomLink placeholder="zoom link">
+                                                  </div>
+                                                </div>
+                                                <div class="uk-margin">
+                                                  <p class="uk-text-large ">
+                                                    <span class="fas fa-sticky-note"></span> Notes</p>
+                                                  <div class="form-inline ">
+                                                    <textarea class="uk-textarea uk-width-5-6@s" rows="5" value={{item.payload.val().notes}} #notes placeholder="Notes"></textarea>
+                                                  </div>
+                                                </div>
+                                                <div uk-margin></div>
+                                                <div class="form-inline " uk-margin>
+                                                  <button class="uk-button uk-button-primary uk-text-capitalize" type="button" onclick="UIkit.notification({message: 'Lesson successfully updated.', status: 'success'})"
+                                                    (click)="edit(item.key,Subject.value,lNumber.value,lStartTime.value,NumberLessonsHours.value,zoomLink.value,notes.value)">Edit</button>
+                                                  <button class="uk-button uk-button-default uk-text-capitalize uk-modal-close" type="button">cancel</button>
+
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </fieldset>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <button class="dropdown-item" (click)="delete(item.key)">
+                                <span uk-icon="trash"></span> Delete </button>
+                            </ul>
+                          </div>
+                        </li>
+                      </div>
+                      <h6 class="uk-card-title uk-margin-remove-bottom">{{item.payload.val().name}}</h6>
+                      <p class="uk-text-meta uk-margin-remove-top">
+                        <time datetime="2018-04-01T19:00">{{item.payload.val().date}}</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-card-body">
+                  <div class="uk-text-center">
+                    <h3 class="">{{item.payload.val().subject}}</h3>
+                  </div>
+                  <table class="uk-table uk-table-divider">
+                    <tbody>
+                      <tr>
+                        <td>Subject</td>
+                        <td>{{item.payload.val().subject}}</td>
+                      </tr>
+                      <tr>
+                        <td>Lesson Number</td>
+                        <td>{{item.payload.val().lNumber}}</td>
+                      </tr>
+                      <tr>
+                        <td>Lesson start time</td>
+                        <td>{{item.payload.val().lStartTime}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="uk-card-footer ">
+                  <div class="container">
+                    <div class="row ">
+                      <div class="col-4 col-md-4 col-sm-4 clo-lg-4  ">
+                        <button class="uk-button-primary mysize" (click)="come(item.key)">
+                          <span class="fas fa-walking"></span> Come {{item.payload.val().allcome}} </button>
+                      </div>
+                      <div class="col-4 col-md-4 col-sm-4 clo-lg-4 uk-text-center ">
+                        <button href="#share" class="uk-button-primary mysize " uk-toggle>
+                          <span class="fas fa-share-square"></span>share</button>
+                        <div id="share" uk-modal>
+                          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-text-center">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <h2 class="uk-modal-title">Link share Lesson</h2>
+                            <div class="col-auto" id="sendreset">
+                              <label class="sr-only" for="inlineFormInputGroup"></label>
+                              <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">Link</div>
+                                </div>
+                                <input value="{{host}}/moreinfo/{{item.key}}" type="text" class="form-control">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-md-4 col-sm-4 clo-lg-4 uk-text-right ">
+                        <button class="uk-button-primary mysize " (click)="show(item.key)">
+                          <span class="fas fa-eye "></span> show</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  text = "Training Online \nIs a platform for the company code for Iraq,\nthrough which you can learn the lesson time in your PATH \nThe name of the trainer, the number of daily lessons,the number of attendees ... and more"
-  constructor() { }
+  private  isLoggedIn:boolean;
+  constructor() { 
+     let status = localStorage.getItem('isLoggedIn');
+      this.isLoggedIn = status === 'true';
+  }
 
   ngOnInit() {
   }

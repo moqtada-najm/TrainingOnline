@@ -1,0 +1,66 @@
+<div class="uk-padding">
+    <fieldset class="uk-fieldset">
+        <div class="row">
+            <div class="offset-lg-3 offset-md-2 col-lg-6 col-md-8 col-sm-12 clo-xs-12 ">
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="row">
+                        <div class="offset-1 col-lg-10 col-md-10 col-sm-10 ">
+                            <div class="row">
+                                <div class="offset-4 offset-lg-4 offset-md-4 offset-sm-4 clo-6 col-lg-6 col-md-6 col-sm-6 ">
+                                    <div class="uk-width-auto" id='myimg'>
+                                        <img class="uk-border-circle" width="100" height="100" src={{photoURL}}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-width-auto uk-text-center">
+                                <p class="uk-card-title uk-margin-remove-bottom mybutton">{{data.email}}</p>
+                                <div class="js-upload" uk-form-custom>
+                                    <input type="file" (change)="upload($event)" accept=".png,.jpg" multiple>
+                                    <button class="uk-button uk-button-primary uk-button-small mybutton" type="button" tabindex="-1">Edit photo</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class=" uk-text-left">
+                                <p>First Name : {{data.FirstName}}</p>
+                                <p>Last Name : {{data.LastName}}</p>
+                                <p>Rank : {{data.rank}}</p>
+                                <button class="uk-button uk-button-primary buttlogin forget" href="#Forgot-password" uk-toggle>Edit profile</button>
+                                <div id="Forgot-password" uk-modal>
+                                    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-text-center">
+                                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                                        <h2 class="uk-modal-title">Edit profile</h2>
+                                        <div class="col-auto">
+                                            <label class="sr-only" for="inlineFormInputGroup"></label>
+                                            <div class="uk-margin ">
+                                                <div class="form-inline ">
+                                                    <p class="uk-text-large ">
+                                                        <span uk-icon="icon: user"></span> First name</p>
+                                                    <input class="uk-input uk-width-5-6@s " id="in-fn" type="text" [(ngModel)]="new.FirstName" value={{data.FirstName}} name="FirstName"
+                                                        uk-tooltip="title: Enter your first name;  pos: top-right" placeholder="First name">
+                                                </div>
+                                            </div>
+                                            <div class="uk-margin">
+                                                <div class="form-inline">
+                                                    <p class="uk-text-large">
+                                                        <span uk-icon="icon: users"></span> Last name</p>
+                                                    <input class="uk-input uk-width-5-6@s " id="in-ln" type="text" [(ngModel)]="new.LastName" value={{data.LastName}} name="LastName"
+                                                        placeholder="Last name" uk-tooltip="title: Enter your lsat name;  pos: top-right">
+                                                </div>
+                                            </div>
+                                            <div id="errorReset">
+                                            </div>
+                                            <p class="uk-text-center">
+                                                <button class="uk-button uk-button-default uk-modal-close " type="button">Cancel</button>
+                                                <button class="uk-button uk-button-primary uk-margin" (click)="newprofile()" type="button">Save</button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>

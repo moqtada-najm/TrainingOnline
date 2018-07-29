@@ -1,0 +1,69 @@
+<div class="uk-text-center">
+  <div class="uk-padding">
+    <fieldset class="uk-fieldset">
+      <div class="row">
+        <div class="offset-lg-3 offset-md-2 col-lg-6 col-md-8 col-sm-12 clo-xs-12 ">
+          <div class="uk-card uk-card-default uk-card-body">
+            <div class="row">
+              <div class="offset-1 col-lg-10 col-md-10 col-sm-10 ">
+                <legend class="uk-legend uk-text-bold uk-text-primary">Login</legend>
+                <div class="uk-card ">
+                  <div class="col-auto formage ">
+                    <div class="input-group mb-2 ">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-user"> </i>
+                        </div>
+                      </div>
+                      <input class="form-control uk-input " id="ifemail" type="text" placeholder="Email" name="email" [(ngModel)]="email">
+                    </div>
+                  </div>
+                  <div class="col-auto  formage">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-lock"> </i>
+                        </div>
+                      </div>
+                      <input class="form-control uk-input" id="ifpass" type="password" placeholder="Password" name="password" [(ngModel)]="password">
+                    </div>
+                  </div>
+                  <div class="col-auto  formage">
+                    <div class="input-group mb-2">
+                      <button class="uk-button uk-button-primary buttlogin " type="button" (click)="tologin()">Login</button>
+                      <a href="#Forgot-password" class="forget" uk-toggle>Forgot password?</a>
+                      <div id="iferror">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Forgot password -->
+                  <div id="Forgot-password" uk-modal>
+                    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-text-center">
+                      <button class="uk-modal-close-default" type="button" uk-close></button>
+                      <h2 class="uk-modal-title">Reset password</h2>
+                      <div class="col-auto" id="sendreset">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">Emile</div>
+                          </div>
+                          <input [(ngModel)]="emailtoreset" name="emailtoreset" placeholder="emailtoreset" type="text" class="form-control" id="inlineFormInputGroup"
+                            placeholder="example@codeforirq.org">
+                        </div>
+                        <div id="errorReset">
+                        </div>
+                        <p class="uk-text-center">
+                          <button class="uk-button uk-button-primary" type="button" (click)="resetpassword()">Send Reset</button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>

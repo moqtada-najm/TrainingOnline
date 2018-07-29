@@ -1,60 +1,86 @@
 <div class="home">
-    <div class="inhome"> 
-            <div>
-                <div class="uk-padding">
+    <div class="inhome">
+        <div>
+            <div class="uk-padding">
                 <h1 class="uk-text-center myfont">Training Online</h1>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12 clo-xs-12 col-12"></div>
                         <div class="col-lg-4 col-md-4 col-sm-12 clo-xs-12 col-12">
-                            <p class="text-center mycoloris">Training Online Is a platform for the company code for Iraq,through which you can learn the lesson time in your PATH The name of the trainer, the number of daily lessons,the number of attendees ... and more</p>
+                            <p class="text-center mycoloris">Training Online Is a platform for the company code for Iraq,through which you can learn the lesson
+                                time in your PATH The name of the trainer, the number of daily lessons,the number of attendees
+                                ... and more</p>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 clo-xs-12 col-12"></div>
                     </div>
-                </div> 
-                </div>
-            </div>
-            <div class="uk-grid-divider uk-child-width-expand@s mycoloris uk-padding" uk-grid>
-                <div>
-                    <div class="text-center"> 
-                        <i class="fas fa-user forsize"></i> <br>
-                        <p>Click on Login to access your account and see new events and lessons</p>
-                        <a routerLink="login"><button class="uk-button uk-button-primary uk-width-1-1">Login</button></a>
-                     </div>
-                </div>
-                <div>
-                    <div class="text-center"> 
-                        <i class="fas fa-user-plus forsize"></i> <br>
-                        <p>Click on Singup If you are part of the Code of Iraq you can register in this program</p>
-                        <a routerLink="login"><button class="uk-button uk-button-primary uk-width-1-1">Singup</button></a>
-                    </div>
-                </div>
-                <div>
-                    <div class="text-center"> 
-                        <i class="fas fa-book-open forsize"></i> <br>
-                        <p>Click on Show about to view information about the program and its purpose </p>
-                        <button class="uk-button uk-button-primary uk-width-1-1  uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Show about</button>
                 </div>
             </div>
         </div>
-<div id="modal-example" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-        <h2 class="uk-modal-title myfont uk-text-center">Training Online</h2>
-        <ul class="uk-list">
-        <li>This program is run through the code for Iraq 
-        You can follow the latest news about lessons and tests
-        Here teachers in PATH present notes </li>
-        <li>With every detail:</li>
-        <span>Time, subject, requirements, duration of the tape, direct link</span>
-        <li> You can give information to the teacher by waiting for the lesson</li>
-        <li class="uk-label uk-label-danger">Note :</li>
-        <br>
-        <span>Prohibiting the posting of a link to anyone outside the initiative is strictly prohibited</span>
-       </ul>
-        <p class="uk-text-center">
-            <button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
-        </p>
+        <div *ngIf="!isLoggedIn" class="uk-grid-divider uk-child-width-expand@s mycoloris uk-padding mypadding " uk-grid>
+            <div>
+                <div class="text-center">
+                    <i class="fas fa-user forsize"></i>
+                    <br>
+                    <p>Click on Login to access your account and see new events and lessons</p>
+                    <a routerLink="login">
+                        <button class="uk-button uk-button-primary uk-width-1-1">Login</button>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="text-center">
+                    <i class="fas fa-user-plus forsize"></i>
+                    <br>
+                    <p>Click on Singup If you are part of the Code of Iraq you can register in this program</p>
+                    <a routerLink="login">
+                        <button class="uk-button uk-button-primary uk-width-1-1">Singup</button>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="text-center">
+                    <i class="fas fa-book-open forsize"></i>
+                    <br>
+                    <p>Click on Show about to view information about the program and its purpose </p>
+                    <button class="uk-button uk-button-primary uk-width-1-1  uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Show about</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isLoggedIn" class="uk-grid-divider uk-child-width-expand@s mycoloris uk-padding mypadding" uk-grid>
+            <div>
+                <div class="text-center">
+                    <i class="fas fa-book-open forsize"></i>
+                    <br>
+                    <p>Click on Show about to view information about the program and its purpose </p>
+                    <button class="uk-button uk-button-primary uk-width-1-1  uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Show about</button>
+                </div>
+            </div>
+            <div>
+                <div class="text-center">
+                    <i class="fas fa-book forsize"></i>
+                    <br>
+                    <p>Click on Show Lessons to View all new tutorials and follow up teachers </p>
+                    <button class="uk-button uk-button-primary uk-width-1-1  uk-margin-small-right" type="button" routerLink="/lessons">Show Lessons</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-example" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title myfont uk-text-center">Training Online</h2>
+                <ul class="uk-list">
+                    <li>This program is run through the code for Iraq You can follow the latest news about lessons and tests
+                        Here teachers in PATH present notes </li>
+                    <li>With every detail:</li>
+                    <span>Time, subject, requirements, duration of the tape, direct link</span>
+                    <li> You can give information to the teacher by waiting for the lesson</li>
+                    <li class="uk-label uk-label-danger">Note :</li>
+                    <br>
+                    <span>Prohibiting the posting of a link to anyone outside the initiative is strictly prohibited</span>
+                </ul>
+                <p class="uk-text-center">
+                    <button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
+                </p>
+            </div>
+        </div>
     </div>
-</div>
-    </div> 
 </div>
