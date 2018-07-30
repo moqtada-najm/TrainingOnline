@@ -38,3 +38,8 @@ background-attachment: fixed;
     bottom: 0;
     border-left: 1px solid #39f;
 }
+*+address, *+dl, *+fieldset, *+figure, *+ol, *+p, *+pre, *+ul {
+    margin: 0px 40px;
+    margin-top: 20px;
+    padding: 10px;
+}
