@@ -25,7 +25,9 @@ export class LessonsComponent implements OnInit {
   uidname: string = localStorage.getItem('uid')
   host = window.location.host;
   constructor(public db: AngularFireDatabase, public router: Router, public fire: AngularFireAuth, public ActivatedRoute: ActivatedRoute) {
-    this.db.database.ref("users/" + this.uidname).on("value", userd => {
+    var islogin = localStorage.getItem('isLoggedIn');
+    if (islogin != "false") {
+       this.db.database.ref("users/" + this.uidname).on("value", userd => {
       if (userd.val().rank == "techer") {
         this.techer = true
       } else {
@@ -33,6 +35,10 @@ export class LessonsComponent implements OnInit {
       }
     })
     this.mylist = db.list("lessons").snapshotChanges();
+
+  }else {
+    this.router.navigate(["login"])
+  }
 
   }
   ngOnInit() {

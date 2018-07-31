@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,15 +15,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { ReversePipe } from './lessons/reverse.pipe';
+import { RouterModule, Routes  } from '@angular/router';
 
-
-
+ 
 const routes:Routes = [
   {path:'', redirectTo:'home' , pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'singup', component:SingupComponent},
   {path:'login', component:LoginComponent},
-  {path:'profile', component:ProfileComponent},
+  {path:'profile', component:ProfileComponent },
   {path:'lessons', component:LessonsComponent},
   {path:'moreinfo/:id', component:MoreinfoComponent}
 ]
@@ -49,7 +48,7 @@ const routes:Routes = [
     AngularFireDatabaseModule,
     AngularFireStorageModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

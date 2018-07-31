@@ -29,7 +29,9 @@ export class ProfileComponent implements OnInit {
 
   photoURL: any
   constructor(public db: AngularFireDatabase, public fire: AngularFireAuth, public afStorage: AngularFireStorage, private router: Router, ) {
-    this.itemList = db.list('users')
+    var islogin = localStorage.getItem('isLoggedIn');
+    if (islogin != "false") {
+      this.itemList = db.list('users')
     this.fire.auth.onAuthStateChanged(user => {
       this.users = user.displayName
       this.photoURL = user.photoURL
@@ -45,7 +47,9 @@ export class ProfileComponent implements OnInit {
       });
     })
 
-
+  }else {
+    this.router.navigate(["login"])
+  }
   }
   ngOnInit() {
   }
